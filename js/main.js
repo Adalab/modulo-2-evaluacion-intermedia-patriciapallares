@@ -53,7 +53,6 @@ function displayMessage() {
   // mostrar el resultado aleatorio  
   diceText.innerHTML = `Dado: ${pcNum}`
 }
-
 // función si moneyLeft === 0 o 200, donde NUM será el valor del saldo total: no supe hacerlo, sigo
 function endOfGame(NUM) {
   moneyLeft.value = NUM;
@@ -63,24 +62,25 @@ function endOfGame(NUM) {
     winnerIs.innerHTML = `¡¡Eres la ganadora!!`
     reButton.classList.remove('hidden');
   } else if ( NUM === 0) {
-    section.classList.add('hidden')
+    section.classList.add('hidden');
     winnerIs.innerHTML = `Sorry, ha ganado el cpu :'(`;
     reButton.classList.remove('hidden');
   }
 };
 
+endOfGame();
+
 function restart() {
   reButton.classList.add('hidden');
   winnerIs.classList.add('hidden');
   section.classList.remove('hidden');
-}
+};
 
-endOfGame(200);
+
 // intento hacer una función manejadora
 function handleClickButton (event) {
   event.preventDefault();
   displayMessage();
-
 }
 
 // Codigo a ejecutar cuando carga la página
