@@ -8,6 +8,7 @@ const select = document.querySelector('.js-select');
 const button = document.querySelector('.js-button');
 const goText = document.querySelector('.js-go-text');
 const emptyText = document.querySelector('.js-empty-text')
+const diceText = document.querySelector('.js-dice');
 
 
 // funciones
@@ -17,10 +18,13 @@ function getRandomNumber(max) {
 
 // función para que aparezca un mensaje u otro en función de si el número aleatorio y el de la usuaria son el mismo o no.
 function displayMessage() {
+  
   // variable para el número aleatorio
   const pcNum = getRandomNumber(6);
+
   console.log(pcNum);
   // variable para el valor seleccionado por la usuaria
+
   const userNum = select.value;
   // variable para hacer número el valor seleccionado por la usuaria
   const realNum = parseInt(userNum); 
@@ -33,7 +37,11 @@ function displayMessage() {
     goText.classList.add('hidden');
     emptyText.innerHTML = `¡Has perdido lo apostado D:!`
   } 
+
+  // mostrar el resultado aleatorio  
+  diceText.innerHTML = `Dado: ${pcNum}`
 }
+
 
 // intento hacer una función manejadora
 function handleClickButton (event) {
