@@ -75,11 +75,12 @@ function restart() {
   section.classList.remove('hidden');
 }
 
+endOfGame(200);
 // intento hacer una función manejadora
 function handleClickButton (event) {
   event.preventDefault();
   displayMessage();
-  endOfGame();
+
 }
 
 // Codigo a ejecutar cuando carga la página
