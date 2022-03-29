@@ -6,8 +6,8 @@
 /// 
 
 Tareas:
-[] Maquetar Html
-[] Declarar variables en JS
+[x] Maquetar Html
+[x] Declarar variables en JS
 [] addEventListener en el botón de jugar
 [] Recoger el valor de la usuaria
 [] Plantear las condiciones
