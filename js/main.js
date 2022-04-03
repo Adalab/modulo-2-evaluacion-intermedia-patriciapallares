@@ -26,33 +26,21 @@ function getRandomNumber(max) {
    return Math.ceil(Math.random()*max);
 }
 
-// variable para el número aleatorio
-  const pcNum = getRandomNumber(6);
 
+function message (msg) {
+  goText.classList.add('hidden');
+  emptyText.innerHTML = msg;
+ }
+ 
 // función para que aparezca un mensaje u otro en función de si el número aleatorio y el de la usuaria son el mismo o no.
-function displayMessage() { 
-  // variable para el número aleatorio
-  const pcNum = getRandomNumber(6);
-  // variable para el valor (número) seleccionado por la user
-  const userNum = parseInt(selectNum.value);
+function paintMessage(pcnum, usernum) {
+  if (pcnum === usernum) { message(`¡Has ganado el doble de lo apostado :D!`)}
+  else { message(`¡Has perdido lo apostado D:!`);
+  // mostrar el resultado aleatorio
+  diceText.innerHTML = `Dado: ${pcnum}`
+ };
+};
 
-  // BONUS variable para el valor (número) seleccionado por la user
-  const herChoiceMoney = parseInt(selectMoney.value);
-
-
-  if (pcNum === userNum) {
-    goText.classList.add('hidden');
-    emptyText.innerHTML = `¡Has ganado el doble de lo apostado :D!`;
-    // moneyLeft.innerHTML = `Saldo: ${initValue + realMoney*2}`;
-
-  } else {
-    goText.classList.add('hidden');
-    emptyText.innerHTML = `¡Has perdido lo apostado D:!`;
-    // moneyLeft.innerHTML = `Saldo: ${initValue - realMoney}`;
-  }
-  // mostrar el resultado aleatorio  
-  diceText.innerHTML = `Dado: ${pcNum}`
-}
 
 
 // función si moneyLeft === 0 o 200, donde NUM será el valor del saldo total: no supe hacerlo, sigo
@@ -82,8 +70,14 @@ function restart() {
 // intento hacer una función manejadora
 function handleClickButton (event) {
   event.preventDefault();
-  displayMessage();
-}
+  // variable para el número aleatorio
+  const pcNum = getRandomNumber(6);
+  // variable para el valor (número) seleccionado por la user
+  const userNum = parseInt(selectNum.value);
+  paintMessage(pcNum, userNum);
+  
+ }
+ 
 
 // Codigo a ejecutar cuando carga la página
 button.addEventListener('click',handleClickButton);
