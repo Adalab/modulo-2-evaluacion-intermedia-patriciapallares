@@ -33,17 +33,14 @@ function getRandomNumber(max) {
 function displayMessage() { 
   // variable para el número aleatorio
   const pcNum = getRandomNumber(6);
-  // variable para el valor seleccionado por la user
-  const userNum = selectNum.value;
-  // variable para hacer número el valor seleccionado por la user
-  const realNum = parseInt(userNum); 
+  // variable para el valor (número) seleccionado por la user
+  const userNum = parseInt(selectNum.value);
 
-  // BONUS variable para el valor seleccionado por la user
-  const herChoiceMoney = selectMoney.value;
-  // variable para hacer número el valor seleccionado por la user
-  const realMoney = parseInt(herChoiceMoney); 
+  // BONUS variable para el valor (número) seleccionado por la user
+  const herChoiceMoney = parseInt(selectMoney.value);
 
-  if (pcNum === realNum) {
+
+  if (pcNum === userNum) {
     goText.classList.add('hidden');
     emptyText.innerHTML = `¡Has ganado el doble de lo apostado :D!`;
     // moneyLeft.innerHTML = `Saldo: ${initValue + realMoney*2}`;
