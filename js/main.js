@@ -43,22 +43,21 @@ function paintMessage(pcnum, usernum) {
 
 
 
-// función si moneyLeft === 0 o 200, donde NUM será el valor del saldo total: no supe hacerlo, sigo
-function endOfGame(NUM) {
-  moneyLeft.value = NUM;
+// función si moneyLeft === 0 o 200, donde moneyLet será el valor del saldo total: no supe hacerlo, sigo
+function endOfGame(moneyLet) {
+  moneyLeft.value = moneyLet;
 
-  if (NUM === 200){
+  if (moneyLet === 200){
     section.classList.add('hidden');
     winnerIs.innerHTML = `¡¡Eres la ganadora!!`
     reButton.classList.remove('hidden');
-  } else if ( NUM === 0) {
+  } else if ( moneyLet === 0) {
     section.classList.add('hidden');
     winnerIs.innerHTML = `Sorry, ha ganado el cpu :'(`;
     reButton.classList.remove('hidden');
   }
 };
 
-endOfGame();
 
 function restart() {
   reButton.classList.add('hidden');
@@ -76,6 +75,7 @@ function handleClickButton (event) {
   const userNum = parseInt(selectNum.value);
   paintMessage(pcNum, userNum);
   
+  endOfGame();
  }
  
 
