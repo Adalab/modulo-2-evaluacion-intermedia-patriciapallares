@@ -8,7 +8,7 @@ const emptyText = document.querySelector('.js-empty-text')
 const diceText = document.querySelector('.js-dice');
 
 // BONUS variables: no supe hacerlo, sigo
-let initValue = 50;
+let value = 50;
 const moneyLeft = document.querySelector('.js-money-left');
 const selectMoney = document.querySelector('.js-user-money');
 
@@ -18,13 +18,16 @@ const section = document.querySelector('.js-section');
 const winnerIs = document.querySelector('.js-winner-is');
 
 // BONUS pre-eventos: no supe hacerlo, sigo
-moneyLeft.innerHTML = `Saldo: ${initValue}`;
+moneyLeft.innerHTML = `Saldo: ${value}`;
 
 
 // funciones
 function getRandomNumber(max) {
    return Math.ceil(Math.random()*max);
 }
+
+// variable para el número aleatorio
+  const pcNum = getRandomNumber(6);
 
 // función para que aparezca un mensaje u otro en función de si el número aleatorio y el de la usuaria son el mismo o no.
 function displayMessage() { 
@@ -45,7 +48,7 @@ function displayMessage() {
     emptyText.innerHTML = `¡Has ganado el doble de lo apostado :D!`;
     // moneyLeft.innerHTML = `Saldo: ${initValue + realMoney*2}`;
 
-  } else if (pcNum !== realNum) {
+  } else {
     goText.classList.add('hidden');
     emptyText.innerHTML = `¡Has perdido lo apostado D:!`;
     // moneyLeft.innerHTML = `Saldo: ${initValue - realMoney}`;
@@ -53,6 +56,8 @@ function displayMessage() {
   // mostrar el resultado aleatorio  
   diceText.innerHTML = `Dado: ${pcNum}`
 }
+
+
 // función si moneyLeft === 0 o 200, donde NUM será el valor del saldo total: no supe hacerlo, sigo
 function endOfGame(NUM) {
   moneyLeft.value = NUM;
