@@ -1,5 +1,9 @@
-/* body {
+body {
   margin: 0;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+   color: lightgray;
 }
 
 :root {
@@ -9,8 +13,8 @@
 
 .button {
   color: white;
-  background-color: rgb(36, 125, 155);
-  border: 3px solid rgb(36, 125, 155);
+  background-color: rgba(0,212,255,1);
+  border: none;
   border-radius: 3px;
 }
 
@@ -18,20 +22,22 @@
 .main {
   width: 100vw;
   height: 100vh;
-  background-color: lightblue;
+  background-color: rgba(173, 216, 230, 0.103);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
 
 .section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-} */
+} 
 
 .hidden {
   display: none;
 }
+
